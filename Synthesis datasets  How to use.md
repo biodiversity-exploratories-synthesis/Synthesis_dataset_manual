@@ -80,7 +80,7 @@ library(data.table)
 dat.wide<-dcast.data.table(dat,Species~Plot,value.var="value",fill=0)
 ```
 
-![img](./images/Synthesis datasets  How to use-Fig1)
+![img](https://github.com/biodiversity-exploratories-synthesis/Synthesis-dataset-manual/blob/main/images/Synthesis%20datasets%20%20How%20to%20use-Fig1?raw=true)
 
 **Fig1**: *illustration of the long format (mostly used to store and assemble data from different sources) and wide format (mostly used to type, visualise data or for data analysis)*
 
