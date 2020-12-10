@@ -80,5 +80,42 @@ library(data.table)
 dat.wide<-dcast.data.table(dat,Species~Plot,value.var="value",fill=0)
 ```
 
-![Figure 1](https://lh5.googleusercontent.com/jGNmDUC_klYpHjIpPURtILnwqn3vGbxOXkok9qT-dyiwgdRyNhNRXL69I1oOUgaEPAfr5MG2pa3MTA4Ilhxtz7a5N56_7UZdNM1gkuloK4r7lSvh1Uo6z2itXvfPAoBvbg "test caption")
+![img](Synthesis datasets  How to use-Fig1)
 
+**Fig1**: *illustration of the long format (mostly used to store and assemble data from different sources) and wide format (mostly used to type, visualise data or for data analysis)*
+
+
+
+## Grouping (e.g. into trophic level)
+
+### Diversity datasets
+
+Not all groups were measured in all plots. When grouping several taxonomic groups into a given trophic level (or any other grouping, e.g. grouping multiple years), we recommend to always check if all groups/species were measured in the same plots and only use the plots where all groups/species were measured. Otherwise the calculated richness or other diversity estimates per group will be biased. We also recommend checking again the number of available plots before analysing data. The number of available plots can be found in the metadata of each dataset or can be retrieved from the synthesis dataset using the DataID column.
+
+```R
+#Example code to check which datasets have information on less than 150 plots, using the Bexis dataset ID:
+dat<-dat[!is.na(value)] #remove all NAs
+for (i in sort(unique(dat$DataID))){
+tt<-dat[DataID==i]
+if(length(unique(tt$Plot))!=150)
+
+print(paste(i,":",length(unique(tt$Plot)),unique(tt$Trophic_level),",",unique(tt$Group_broad)))
+}
+
+#Another example using Trophic level and checking the number of plots X species combinations:
+for (i in unique(dat$Trophic_level)){
+tt<-dat[Group_broad==i]
+if(length(unique(tt$Plot))*length(unique(tt$Species))*length(unique(tt$Year))!=nrow(tt))
+
+print(paste(i,":",length(unique(tt$Plot))*length(unique(tt$Species)),"/",nrow(tt)))
+}
+
+```
+
+Not all groups were measured with the same methods. When grouping taxa that have several hundreds of species (e.g. OTU data) with taxa with very few species, the information about taxa with lower richness will likely be “hidden” by the other one. When species numbers in different groups are of similar range, grouping to calculate richness is mostly fine. Grouping to calculate abundances (e.g. total number of individuals in a given plot) can be more sensitive to the methods of collection and should be done very carefully.
+
+
+
+### Functions datasets
+
+This also applies to the functions datasets when combining multiple functions. Additionally, it is worth mentioning that besides raw data, some functions are already assembled from several years and some functions are combined. This is indicated as “assembled data” in the column “DataID” of the metadata table (see 3. of the [Organisation](#Organisation) paragraph). The method of assembling (e.g. mean over years) is described in the “calculation” column.
