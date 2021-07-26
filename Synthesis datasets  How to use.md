@@ -12,6 +12,10 @@ We strongly recommend reading the metadata of the original datasets and contact 
 For any suggestion on this manual or on the synthesis datasets please contact us by email or open an issue on [GitHub](https://github.com/biodiversity-exploratories-synthesis/Synthesis-dataset-manual/issues). 
 
 
+*Table of Contents* : the below `[toc]` generates a Table of Content. On GitHub, the table of contents can be found at the upper left corner of this file.
+
+[toc]
+
 ## Organisation
 
 ### Diversity datasets
@@ -35,13 +39,6 @@ The diversity synthesis datasets are organised in two separate files:
    - Forests : [24608 “Assembled species information from forest EPs (2007-2015) for multidiversity synthesis”](https://www.bexis.uni-jena.de/ddm/data/Showdata/24608)
 
 ### Function datasets
-
----update---
-
-- dataset 27087
-- 
-
----
 
 The functions synthesis datasets are organised in three separate files:
 
@@ -82,7 +79,7 @@ grassland.dataset<-merge(grl,tr,by="Species")
 The synthesis datasets are stored in the long format; however, most analyses are done in the wide format (plots x species, plots x groups, plots x functions), see Fig.1. To transform from long to wide format you can e.g. use the `dcast` (`reshape2`), `dcast.data.table` (`data.table`) or `pivot_wider` (`tidyr`) functions in `R`. Be careful, some functions insert NAs (or other values) when creating a wide-format table and this should be carefully checked. Some functions allow choosing the values to fill (e.g. argument `“fill”` in `dcast.data.table`).
 
 ```R
-#Example code to reshape to the wide format and fill with zeros:
+#Example code to reshape to the wide format and fill with zeros, useful e.g. to add back "missing zeros" (see section below):
 
 library(data.table)
 
@@ -99,7 +96,7 @@ dat.wide<-dcast.data.table(dat,Species~Plot,value.var="value",fill=0)
 
 ### Diversity datasets
 
-Not all groups were measured in all plots. When grouping several taxonomic groups into a given trophic level (or any other grouping, e.g. grouping multiple years), we recommend to always check if all groups/species were measured in the same plots and only use the plots where all groups/species were measured. Otherwise the calculated richness or other diversity estimates per group will be biased. We also recommend checking again the number of available plots before analysing data. The number of available plots can be found in the metadata of each dataset or can be retrieved from the synthesis dataset using the DataID column.
+Not all groups were measured in all plots. When grouping several taxonomic groups into a given trophic level (or any other grouping, e.g. grouping multiple years), we recommend to always check if all groups/ species were measured in the same plots and only use the plots where all groups/ species were measured. Otherwise the calculated richness or other diversity estimates per group will be biased. We also recommend checking again the number of available plots before analysing data. The number of available plots can be found in the metadata of each dataset or can be retrieved from the synthesis dataset using the DataID column.
 
 ```R
 #Example code to check which datasets have information on less than 150 plots, using the Bexis dataset ID:
@@ -121,19 +118,23 @@ print(paste(i,":",length(unique(tt$Plot))*length(unique(tt$Species)),"/",nrow(tt
 
 ```
 
-Not all groups were measured with the same methods. When grouping taxa that have several hundreds of species (e.g. OTU data) with taxa with very few species, the information about taxa with lower richness will likely be “hidden” by the other one. When species numbers in different groups are of similar range, grouping to calculate richness is mostly fine. Grouping to calculate abundances (e.g. total number of individuals in a given plot) can be more sensitive to the methods of collection and should be done very carefully.
+Not all groups were measured with the same methods. When grouping taxa that have several hundreds of species (e.g. Operational Taxonomic Unit (OTU) data) with taxa with very few species, the information about taxa with lower richness will likely be “hidden” by the other one. When species numbers in different groups are of similar range, grouping to calculate richness is mostly fine. Grouping to calculate abundances (e.g. total number of individuals in a given plot) can be more sensitive to the methods of collection and should be done very carefully.
 
 
 
 ### Functions datasets
 
-This also applies to the functions datasets when combining multiple functions. Additionally, it is worth mentioning that besides raw data, some functions are already assembled from several years and some functions are combined. This is indicated as “assembled data” in the column “DataID” of the metadata table (see 3. of the [Organisation](#Organisation) paragraph). The method of assembling (e.g. mean over years) is described in the “calculation” column.
+The grouping information described above also applies to the functions datasets, when combining multiple functions. Additionally, it is worth mentioning that besides raw data, some functions are already grouped from several years, and some functions are combined. Such cases are indicated as “assembled data” in the column “DataID” of the metadata table (see 3. of the [Organisation](#Organisation) paragraph). The method of assembling (e.g. mean over years) is described in the “calculation” column.
 
 
 
 ## "Missing" zeros
 
-To avoid increasing the size of the synthesis dataset, the two largest datasets (bacteria and soil fungi) do not include all combinations of plots x species when a given species was not found in a given plot i.e. they do not contain zeros (see Fig.2). These “missing” combinations are true zeros and should not be confused with NAs. The information in the soil fungi datasets is complete (i.e. all combinations of plots x species were measured, so if the value is not in the dataset it should be replaced by a zero). In grasslands, the bacteria dataset is not complete, two plots miss information for all species (AEG33 and AEG34), for these two plots, the values for all species should be replaced by NAs and any information missing in the rest of the plots are true zeros (and should be replaced by zeros). *We will provide information on missing plots for forest after the release of the updated forest dataset.*
+To avoid increasing the size of the synthesis dataset, the two largest datasets (bacteria and soil fungi) do not include all combinations of plots x species when a given species was not found in a given plot i.e. they do not contain zeros (see Fig.2). These “missing” combinations are true zeros and should not be confused with NAs. The information in the soil fungi datasets is complete (i.e. all combinations of plots x species were measured, so if the value is not in the dataset it should be replaced by a zero). 
+
+In grasslands, the bacteria dataset is not complete, two plots miss information for all species (AEG33 and AEG34), for these two plots, the values for all species should be replaced by NAs and any information missing in the rest of the plots are true zeros (and should be replaced by zeros).
+
+*TODO : We will provide information on missing plots for forest after the release of the updated forest dataset.*
 
 
 
@@ -223,7 +224,17 @@ rarefied.dat <- rarefy_even_depth(phylodat) #sample size should be the smallest 
 
 
 
+## Specific notes for the forest datasets
+
+**Removal of plot HEW02**. In 2017, the forest plot HEW02 was removed. A new plot, **HEW51** was established. In the forest datasets, both plots are included, but HEW02 only contains NAs in years later than 2017. The reverse applies for HEW51: it contains only NAs before 2017.
+
+If using data from only either before 2017 or after 2017, 50 HEW plots can be used. Otherwise, if data from before AND after 2017 are used together, we suggest removing both HEW02 and HEW51 from analysis.
+
+The reason is ... TODO [does 2017 have HEW51 already, or still HEW02? Formulate well the reason. Check back if we officially recommend to remove both plots in case of dataset spanning over 2017. Check back if the NA is handled as described above]
+
+
+
 ## Varia
 
-1. Please always use the scripts provided in Bexis with caution (e.g ID22046 [“R scripts usable for dataset: Assembled RAW diversity from grassland EPs (2010-2016) for multidiversity synthesis”](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=22046) is mostly given as an example) and please report back any spotted errors or issues via email and/or via [Github](https://github.com/biodiversity-exploratories-synthesis).
+1. Please always use the scripts provided in Bexis with caution (e.g ID22046 [“R scripts usable for dataset: Assembled RAW diversity from grassland EPs (2010-2016) for multidiversity synthesis”](https://www.bexis.uni-jena.de/ddm/data/Showdata/22046) is mostly given as an example) and please report back any spotted errors or issues via email and/or via [Github](https://github.com/biodiversity-exploratories-synthesis).
 
