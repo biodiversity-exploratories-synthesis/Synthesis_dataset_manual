@@ -8,8 +8,8 @@ We strongly recommend reading the metadata of the original datasets and contact 
 
 
 
-For any suggestion on this manual or on the synthesis datasets please contact us by email or open an issue on [GitHub](https://github.com/biodiversity-exploratories-synthesis/Synthesis-dataset-manual/issues). 
 
+For any suggestion on this manual or on the synthesis datasets please contact us by email or open an issue on [GitHub](https://github.com/biodiversity-exploratories-synthesis/Synthesis-dataset-manual/issues). 
 
 
 ## Organisation
@@ -22,8 +22,8 @@ The diversity synthesis datasets are organised in two separate files:
 
    Currently these files are:
 
-   - Grasslands :  [27707 “Assembled RAW diversity from grassland EPs (2008-2020) for multidiversity synthesis - November 2020”](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=27707)
-   - Forests : [24607 “Assembled RAW diversity from forest EPs (2007-2015) for multidiversity synthesis”](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=24607)
+   - Grasslands :  [27707 “Assembled RAW diversity from grassland EPs (2008-2020) for multidiversity synthesis - November 2020”](https://www.bexis.uni-jena.de/ddm/data/Showdata/27707)
+   - Forests : [24607 “Assembled RAW diversity from forest EPs (2007-2015) for multidiversity synthesis”](https://www.bexis.uni-jena.de/ddm/data/Showdata/24607)
 
 2. Assembled species information (~20Mb): contain information on Trophic levels, functional and taxonomic grouping
 
@@ -31,32 +31,41 @@ The diversity synthesis datasets are organised in two separate files:
 
    Currently these files are:
 
-   - Grasslands : [27706 “Assembled species information from grassland EPs (2008-2020) for multidiversity synthesis - November 2020”](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=27706)
-   - Forests : [24608 “Assembled species information from forest EPs (2007-2015) for multidiversity synthesis”](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=24608)
+   - Grasslands : [27706 “Assembled species information from grassland EPs (2008-2020) for multidiversity synthesis - November 2020”](https://www.bexis.uni-jena.de/ddm/data/Showdata/27706)
+   - Forests : [24608 “Assembled species information from forest EPs (2007-2015) for multidiversity synthesis”](https://www.bexis.uni-jena.de/ddm/data/Showdata/24608)
 
 ### Function datasets
 
+---update---
+
+- dataset 27087
+- 
+
+---
+
 The functions synthesis datasets are organised in three separate files:
 
-1. Assembled RAW functions: contains entries for each function for each year. As not every function has been measured every year, many entries are missing (these are the unmeasured year-function combinations). The metadata of this file is minimal and is thought to be used with the separately stored metadata (see point 3 below).
+1. The dataset itself (e.g. `27087_16_data.csv`) Assembled RAW functions: contains entries for each function for each year. Not every function has been measured every year, therefore many entries are missing (these are the unmeasured year-function combinations, encoded with `NM`).
 
-   Currently this dataset is: [27087 “Assembled ecosystem measures from grassland EPs (2008-2018) for multifunctionality synthesis - June 2020”](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=27087)
+   Currently this dataset is: [27087 “Assembled ecosystem measures from grassland EPs (2008-2018) for multifunctionality synthesis - June 2020”](https://www.bexis.uni-jena.de/ddm/data/Showdata/27087) 
 
-2. A script: this is a script to reformat the previous file to the wide format (plots x functions) that is easily usable for analysis. It also removes the unmeasured year-function combinations. 
+2. A script `bexis_to_wide_format.R`: this is a script to reformat the previous file to the wide format (plots x functions). This format is easily usable for analysis. It also removes the unmeasured year-function combinations. 
 
-   Currently this script is: [27626 “R Script to Reformat Dataset 27087 "Assembled ecosystem measures from grassland EPs" to easily usable wide format”](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=27626)
+   Currently this script is attached to dataset 27087.
 
-3. An additional metadata file : contains a table with detailed metadata for all functions.
+3. A table with detailed metadata for all functions `synthesis_grassland_function_metadata_ID27087`. 
 
-   Currently this file is: [27088 “Additional metadata of dataset 27087: Assembled ecosystem measures from grassland EPs (2008-2018) for multifunctionality synthesis - June 2020”](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=27088)
+   *Note : as indicated in 27087's metadata, please do not rely on the bexis metadata, but the table described here, which is attached to the dataset.*
+   
+   Currently this file attached to dataset 27087, available as .xlsx and .csv
 
-Note that the forest functions dataset has not been updated to this format yet and is stored in a Plot X Functions format. Currently this dataset is: [24367 “Raw data of forest attributes of forest EPs of the Exploratories project used in "Multiple forest attributes underpin the supply of multiple ecosystem services"](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=24367).
+Note that the forest functions dataset has not been updated to this format yet and is stored in a Plot X Functions format. Currently this dataset is: [24367 “Raw data of forest attributes of forest EPs of the Exploratories project used in "Multiple forest attributes underpin the supply of multiple ecosystem services"](https://www.bexis.uni-jena.de/ddm/data/Showdata/24367).
 
 
 
 ## Datasets size and memory issues
 
-The diversity and function synthesis datasets can be very large and this might create memory problems. We recommend the use of the package `data.table` in `R` to handle the dataset.
+The diversity and function synthesis datasets can be very large and this might create memory problems. We recommend the use of the package [`data.table`](https://cran.r-project.org/web/packages/data.table/index.html) in `R` to handle the dataset.
 
 ```R
 #Example code to read the raw diversity and species information files and merge:
