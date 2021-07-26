@@ -8,8 +8,8 @@ We strongly recommend reading the metadata of the original datasets and contact 
 
 
 
-For any suggestion on this manual or on the synthesis datasets please contact us by email or open an issue on [GitHub](https://github.com/biodiversity-exploratories-synthesis/Synthesis_dataset_manual). 
 
+For any suggestion on this manual or on the synthesis datasets please contact us by email or open an issue on [GitHub](https://github.com/biodiversity-exploratories-synthesis/Synthesis-dataset-manual/issues). 
 
 
 ## Organisation
