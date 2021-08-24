@@ -226,15 +226,18 @@ rarefied.dat <- rarefy_even_depth(phylodat) #sample size should be the smallest 
 
 ## Specific notes for the forest datasets
 
-### Removal of plot HEW02
+### Clear-cut of plot HEW02
 
-Between the field seasons of 2016 and 2017, the forest plot HEW02 was removed (clear-cut). A new plot, **HEW51** was established. In the forest datasets, both plots are included, but HEW02 only contains data for the years until 2016 (including 2016), and NAs from 2017 on (including 2017). Accordingly, the earliest data for HEW51 is in 2017, all years before 2017 (2016 and earlier) are set to NA.
+Between the field seasons of 2016 and 2017, the forest plot HEW02 was heavily damaged by a storm and had to be harvested (clear-cut). A new plot, **HEW51** was established. In the forest datasets, both plots are included, but HEW02 only contains data for the years until 2016 (including 2016), and NAs from 2017 on (including 2017). Accordingly, the earliest data for HEW51 is in 2017, all years before 2017 (2016 and earlier) are set to NA.
 
 If using data from only either before and including 2016 or after 2016, 50 HEW plots can be used. Otherwise, if data from before AND after 2016 are used together in an analysis, we suggest removing both HEW02 and HEW51.
 
-TODO [Check back if we officially recommend to remove both plots in case of dataset spanning over 2017. Check back if the NA is handled as described above]
+### Forest damage due to drought in Hainich
+There was a drought in 2017 and 2018. As a result, in 2019, the Hainich forest was in severe trouble. The foresters in were harvesting as many trees as never before, cutting bark-beetle-infected spruce trees as well as beech trees suffering from drought damages.
+HEW03 suffered from such an extensive infestation with bark beetles that it had to be deforested at the end of the year.
+HEW51 was also heavily damaged by bark beetles, but was not deforested.
 
-
+TODO [Check back if we officially recommend to remove both plots in case of dataset spanning over 2017. Check back if the NA is handled as described above. Check what we recommend for the dry years and for HEW03.]
 
 ## Varia
 
