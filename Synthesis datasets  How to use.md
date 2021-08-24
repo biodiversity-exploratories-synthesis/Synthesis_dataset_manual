@@ -226,11 +226,13 @@ rarefied.dat <- rarefy_even_depth(phylodat) #sample size should be the smallest 
 
 ## Specific notes for the forest datasets
 
-**Removal of plot HEW02**. In 2017, the forest plot HEW02 was removed. A new plot, **HEW51** was established. In the forest datasets, both plots are included, but HEW02 only contains NAs in years later than 2017. The reverse applies for HEW51: it contains only NAs before 2017.
+### Removal of plot HEW02
 
-If using data from only either before 2017 or after 2017, 50 HEW plots can be used. Otherwise, if data from before AND after 2017 are used together, we suggest removing both HEW02 and HEW51 from analysis.
+Between the field seasons of 2016 and 2017, the forest plot HEW02 was removed (clear-cut). A new plot, **HEW51** was established. In the forest datasets, both plots are included, but HEW02 only contains data for the years until 2016 (including 2016), and NAs from 2017 on (including 2017). Accordingly, the earliest data for HEW51 is in 2017, all years before 2017 (2016 and earlier) are set to NA.
 
-The reason is ... TODO [does 2017 have HEW51 already, or still HEW02? Formulate well the reason. Check back if we officially recommend to remove both plots in case of dataset spanning over 2017. Check back if the NA is handled as described above]
+If using data from only either before and including 2016 or after 2016, 50 HEW plots can be used. Otherwise, if data from before AND after 2016 are used together in an analysis, we suggest removing both HEW02 and HEW51.
+
+TODO [Check back if we officially recommend to remove both plots in case of dataset spanning over 2017. Check back if the NA is handled as described above]
 
 
 
