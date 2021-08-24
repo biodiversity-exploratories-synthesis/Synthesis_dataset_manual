@@ -237,7 +237,9 @@ There was a drought in 2018 and 2019. As a result, in 2019, the Hainich forest w
 HEW03 suffered from such an extensive infestation with bark beetles that it had to be deforested at the end of the year.
 HEW51 was also heavily damaged by bark beetles, but was not deforested.
 
-TODO [Check back if we officially recommend to remove both plots in case of dataset spanning over 2017. Check back if the NA is handled as described above. Check what we recommend for the dry years and for HEW03.]
+HEW13 was harvested.
+
+TODO [Check back if we officially recommend to remove both plots in case of dataset spanning over 2017. Check back if the NA is handled as described above. Check what we recommend for the dry years and for HEW03. When and why was HEW13 harvested?]
 
 ## Varia
 
