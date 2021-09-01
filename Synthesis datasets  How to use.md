@@ -226,20 +226,30 @@ rarefied.dat <- rarefy_even_depth(phylodat) #sample size should be the smallest 
 
 ## Specific notes for the forest datasets
 
-### Clear-cut of plot HEW02
+### Clear-cuts in Hainich
 
-In 2016, the forest plot HEW02 was heavily damaged by a storm and had to be harvested (clear-cut) between the field seasons of 2016 and 2017. A new plot, **HEW51** was established. In the forest datasets, both plots are included, but HEW02 only contains data for the years until 2016 (including 2016), and NAs from 2017 on (including 2017). Accordingly, the earliest data for HEW51 is in 2017, all years before 2017 (2016 and earlier) are set to NA.
+#### HEW51 and HEW02
+In 2016, the forest plot HEW02 was heavily damaged by a storm and had to be harvested (clear-cut) between the field seasons of 2016 and 2017. A new plot, **HEW51** was established. 
+
+In the forest datasets, both plots are included, but HEW02 only contains data for the years until 2016 (including 2016), and NAs from 2017 on (including 2017). Accordingly, the earliest data for HEW51 is in 2017, all years before 2017 (2016 and earlier) are set to NA.
 
 If using data from only either before and including 2016 or after 2016, 50 HEW plots can be used. Otherwise, if data from before AND after 2016 are used together in an analysis, we suggest removing both HEW02 and HEW51.
 
-### Forest damage due to drought in Hainich
-There was a drought in 2018 and 2019. As a result, in 2019, the Hainich forest was in severe trouble. The foresters were harvesting as many trees as never before, cutting bark-beetle-infected spruce trees as well as beech trees suffering from drought damages.
-HEW03 suffered from such an extensive infestation with bark beetles that it had to be deforested at the end of the year.
-HEW51 was also heavily damaged by bark beetles, but was not deforested.
 
-HEW13 was harvested.
+#### Forest damage due to drought in Hainich - The Spruce Case
 
-TODO [Check back if we officially recommend to remove both plots in case of dataset spanning over 2017. Check back if the NA is handled as described above. Check what we recommend for the dry years and for HEW03. When and why was HEW13 harvested?]
+Spruce in the Hainich forest are suffering from beetle infestations favoured by the drought. The timeline and most drastic cases of damage are summarised below.
+
+There was a drought in 2018 and 2019. As a result, in **2019**, the Hainich forest was in severe trouble. The foresters were harvesting as many trees as never before, cutting bark-beetle-infected spruce trees as well as beech trees suffering from drought damages.
+- **HEW03** suffered from such an extensive infestation with bark beetles that it had to be deforested at the end of the year 2019.
+- **HEW51** was also heavily damaged by bark beetles, but was not deforested.
+
+- Spruce in **HEW13** had to be deforested in February 2020. However, some of the trees have been left on the plot, as they are intact deciduous trees. 
+
+- **HEW01** : Like all the other cases before, HEW01 was affected by drought and subsequent beetle infestation. Unlike the other plots, the dead spruces on the plot itself were left, but everything around was cut, in order to establish an experiment with standing deadwood.
+
+
+TODO [Check back if we officially recommend to remove both plots in case of dataset spanning over 2017. Check what we recommend for the dry years and the deforested plots.]
 
 ## Varia
 
