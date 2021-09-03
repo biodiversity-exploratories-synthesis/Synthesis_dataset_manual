@@ -229,7 +229,7 @@ rarefied.dat <- rarefy_even_depth(phylodat) #sample size should be the smallest 
 ### Clear-cuts in Hainich
 
 #### HEW51 and HEW02
-In 2016, the forest plot HEW02 was heavily damaged by a storm and had to be harvested (clear-cut) between the field seasons of 2016 and 2017. A new plot, **HEW51** was established. 
+In 2016, the forest plot HEW02 was heavily damaged by a storm and had to be harvested (clear-cut) between the field seasons of 2016 and 2017. The plot was transformed to a grassland, therefore a new plot, **HEW51** was established. 
 
 In the forest datasets, both plots are included, but HEW02 only contains data for the years until 2016 (including 2016), and NAs from 2017 on (including 2017). Accordingly, the earliest data for HEW51 is in 2017, all years before 2017 (2016 and earlier) are set to NA.
 
