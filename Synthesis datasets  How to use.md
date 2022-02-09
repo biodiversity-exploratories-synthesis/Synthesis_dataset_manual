@@ -40,19 +40,19 @@ The diversity synthesis datasets are organised in two separate files:
 
 ### Function datasets
 
-The functions synthesis datasets are organised in three separate files:
+The functions synthesis datasets are organised in three separate files, all part of the same DatasetID 27087:
 
 1. The dataset itself (e.g. `27087_16_data.csv`) Assembled RAW functions: contains entries for each function for each year. Not every function has been measured every year, therefore many entries are missing (these are the unmeasured year-function combinations, encoded with `NM`).
 
    Currently this dataset is: [27087 “Assembled ecosystem measures from grassland EPs (2008-2018) for multifunctionality synthesis - June 2020”](https://www.bexis.uni-jena.de/ddm/data/Showdata/27087) 
 
-2. A script `bexis_to_wide_format.R`: this is a script to reformat the previous file to the wide format (plots x functions). This format is easily usable for analysis. It also removes the unmeasured year-function combinations. 
+2. A script `bexis_to_wide_format.R`: this is a script to reformat the data file from its long format to a wide format (plots x functions). Wide format is more comfortable to handle for analysis. The script removes the unmeasured year-function combinations. 
 
    Currently this script is attached to dataset 27087.
 
 3. A table with detailed metadata for all functions `synthesis_grassland_function_metadata_ID27087`. 
 
-   *Note : as indicated in 27087's metadata, please do not rely on the bexis metadata, but the table described here, which is attached to the dataset.*
+   *Note : as indicated in 27087's metadata, please do not rely on the bexis metadata which is displayed when browsing the dataset, but the table described here, which is attached to the dataset.*
    
    Currently this file attached to dataset 27087, available as .xlsx and .csv
 
