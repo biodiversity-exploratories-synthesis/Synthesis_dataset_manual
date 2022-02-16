@@ -6,6 +6,8 @@ The aim of this manual is to help researchers using the synthesis datasets of th
 
 We strongly recommend reading the metadata of the original datasets and contact their authors to understand their limitations. The Bexis identifier (DataID) and version (Dataversion) of each contributing dataset are provided in the synthesis dataset for reproducibility.
 
+For specific information on the treatment and operations made on the single datasets included in the synthesis datasets, please refer to the scripts available in our [GitHub repository](https://github.com/biodiversity-exploratories-synthesis) (e.g. [Grassland diversity datasets](https://github.com/biodiversity-exploratories-synthesis/Synthesis_dataset_diversity_grassland)) or contact us.
+
 
 
 
@@ -217,7 +219,7 @@ The column `Fun_group_fine` is quite heterogeneous and should be used in combina
 ### Forest diversity datset
 The diversity data in the forest datasets is mostly about understorey groups.
 Important notes:
-- be aware that *deadwood fungi come from two different datasets* (Group_broad: "fungi.deadw"), these datasets were collected with different methods on different years and on a different total nummber of plots. Dataset 17186 is from 2011, has abundance information but only data on 120 plots. Dataset 18547 is from 2010, has presence-absencce information and data on 150 plots. We included both datasets to allow analyses in different years and because the number of species in the two datasets only partially overlap. However we recommend to 1) choose only one dataset for analyses, 2) not compare years and 3) if both years are used, subset the dataset to the common 120 plots.
+- Be aware that **deadwood fungi come from two different datasets** (Group_broad: "fungi.deadw"), these datasets were collected with different methods on different years and on a different total nummber of plots. Dataset 17186 is from 2011, has abundance information but only data on 120 plots. Dataset 18547 is from 2010, has presence-absencce information and data on 150 plots. We included both datasets to allow analyses in different years and because the number of species in the two datasets only partially overlap. However we recommend to 1) choose only one dataset for analyses, 2) not compare years and 3) if both years are used, subset the dataset to the common 120 plots.
 
 ```R
 # Example code to check for this potential issue
@@ -225,7 +227,7 @@ forest_dataset[Group_broad == "fungi.deadw"]
 unique(frs2[Group_broad == "fungi.deadw"]$DataID)
 length(unique(frs2[DataID==17186]$Plot)) #how many plots in dataset 17186?
 ```
-- in the 2021/2022 update we removed all soil fungi datasets and replaced them by the datasets created with the latest sequencing techniques. However, datasets specifically collected on fine roots (and not on soils) could be of interest for specific projects:
+- In the 2021/2022 update we removed all soil fungi datasets and replaced them by the datasets created with the latest sequencing techniques. However, datasets specifically collected on fine roots (and not on soils) could be of interest for specific projects:
   - 22968: Fungal communities from fine roots collected from 150 forest plots in 2014 by Illumina sequencing  - normalized to 8400 reads per plot
   - 30973: Abundant of root-associated fungi from the organic layer and mineral soil across 150 forest experimental plots (soil sampling campaign, 2017) - OTU taxonomic look-up table
   - 30974: Abundant of root-associated fungi from organic layer and mineral soil across 150 forest experimental plots (soil sampling campaign, 2017)
@@ -234,9 +236,9 @@ length(unique(frs2[DataID==17186]$Plot)) #how many plots in dataset 17186?
     - 27688: Arbuscular mycorrhizal fungi on all 150 forest EPs (from Soil Sampling Campain 2011; Illumina MiSeq) - ASV abundances
   - 27690: Arbuscular mycorrhizal fungi on all 150 forest EPs (from Soil Sampling Campain 2014; Illumina MiSeq) - ASV abundances
   - 27692: Arbuscular mycorrhizal fungi on all 150 forest EPs (from Soil Sampling Campain 2017; Illumina MiSeq) - ASV abundances
-    - 27686: Arbuscular mycorrhizal fungi on all 300 EPs (from Soil Sampling Campains 2011, 2014 and 2017; Illumina MiSeq) - ASV taxonomic look-up table
+  - 27686: Arbuscular mycorrhizal fungi on all 300 EPs (from Soil Sampling Campains 2011, 2014 and 2017; Illumina MiSeq) - ASV taxonomic look-up table
 
-- Protists: Cercozoa are mainly bacterivores (omnivores and eukarivores could be removed from analyses). Oomicota are mainly plant parasites, hemibiotrophs (alternate parasites) and saprotrophs (less specialised): this informain is in the Fun_group_fine column.
+- Protists information. Cercozoa are mainly bacterivores (omnivores and eukarivores could be removed from analyses). Oomicota are mainly plant parasites, hemibiotrophs (alternate parasites) and saprotrophs (less specialised): this informain is in the Fun_group_fine column.
 
 
 ### Clear-cuts in Hainich
