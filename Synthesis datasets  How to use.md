@@ -1,10 +1,10 @@
 # Synthesis datasets : How to use?
 
-The aim of this manual is to help researchers using the synthesis datasets of the Biodiversity Exploratories. It gives tips on how to handle the datasets and outlines the common issues when analysing the data.
+The aim of this manual is to help researchers using the synthesis datasets of the Biodiversity Exploratories. It provides information and tips on how to handle the datasets and outlines the common issues when analysing the data.
 
 
 
-We strongly recommend reading the metadata of the original datasets and contact their authors to understand their limitations. The Bexis identifier (DataID) and version (Dataversion) of each dataset are provided in the synthesis dataset for reproducibility.
+We strongly recommend reading the metadata of the original datasets and contact their authors to understand their limitations. The Bexis identifier (DataID) and version (Dataversion) of each contributing dataset are provided in the synthesis dataset for reproducibility.
 
 
 
@@ -27,7 +27,7 @@ The diversity synthesis datasets are organised in two separate files:
    Currently these files are:
 
    - Grasslands :  [27707 “Assembled RAW diversity from grassland EPs (2008-2020) for multidiversity synthesis - November 2020”](https://www.bexis.uni-jena.de/ddm/data/Showdata/27707)
-   - Forests : [24607 “Assembled RAW diversity from forest EPs (2007-2015) for multidiversity synthesis”](https://www.bexis.uni-jena.de/ddm/data/Showdata/24607)
+   - Forests : [31206 “Assembled RAW diversity from forest EPs (2007-2020) for multidiversity synthesis -  January 2022”](https://www.bexis.uni-jena.de/ddm/data/Showdata/31206)
 
 2. Assembled species information (~20Mb): contain information on Trophic levels, functional and taxonomic grouping
 
@@ -36,7 +36,7 @@ The diversity synthesis datasets are organised in two separate files:
    Currently these files are:
 
    - Grasslands : [27706 “Assembled species information from grassland EPs (2008-2020) for multidiversity synthesis - November 2020”](https://www.bexis.uni-jena.de/ddm/data/Showdata/27706)
-   - Forests : [24608 “Assembled species information from forest EPs (2007-2015) for multidiversity synthesis”](https://www.bexis.uni-jena.de/ddm/data/Showdata/24608)
+   - Forests : [31207 “Assembled species information from forest EPs (2007-2020) for multidiversity synthesis - January 2022”](https://www.bexis.uni-jena.de/ddm/data/Showdata/31207)
 
 ### Function datasets
 
@@ -132,7 +132,9 @@ The grouping information described above also applies to the functions datasets,
 
 To avoid increasing the size of the synthesis dataset, the two largest datasets (bacteria and soil fungi) do not include all combinations of plots x species when a given species was not found in a given plot i.e. they do not contain zeros (see Fig.2). These “missing” combinations are true zeros and should not be confused with NAs. The information in the soil fungi datasets is complete (i.e. all combinations of plots x species were measured, so if the value is not in the dataset it should be replaced by a zero). 
 
-In grasslands, the bacteria dataset is not complete, two plots miss information for all species (AEG33 and AEG34), for these two plots, the values for all species should be replaced by NAs and any information missing in the rest of the plots are true zeros (and should be replaced by zeros).
+In grasslands, the bacteria dataset is not complete, two plots miss information for all species (AEG33 and AEG34). For these two plots, the values for all species should be replaced by NAs and any information missing in the rest of the plots are true zeros (and should be replaced by zeros).
+
+In forests, the bacteria dataset is not complete, one plot misses information for all species (HEW04, see https://www.bexis.uni-jena.de/ddm/data/Showdata/24868). For this plot, the values for all species should be replaced by NAs and any information missing in the rest of the plots are true zeros (and should be replaced by zeros).
 
 *TODO : We will provide information on missing plots for forest after the release of the updated forest dataset.*
 
@@ -142,7 +144,7 @@ In grasslands, the bacteria dataset is not complete, two plots miss information 
 
 **Fig2**: *example illustration of the values that are not present in the bacteria and soil fungi datasets due to dataset size limitations. The red values are the ones that are not reported in the synthesis dataset (shown on the right). Note that the soil fungi dataset does not have NAs, the bacteria dataset has NAs for all species for plots AEG33 and AEG34.*
 
-Real NAs can happen when a full plot is missing from the dataset (e.g. AEG33 in Fig2) or when a combination of plot X species is not available. This second case only happens with arthropod datasets (e.g. pollinators) and we recommend to only use plots with information on all species (i.e. without NAs, using e.g. the command na.omit(dat)). We highlight this topic because it might cause issues when using the data to e.g. calculate richness of a given group. We recommend to always check how many plots were measured per DataID and per year.
+Real NAs can happen when a full plot is missing from the dataset (e.g. AEG33 in Fig2) or when a combination of plot X species is not available. This second case only happens with arthropod datasets (e.g. pollinators in grasslands) and we recommend to only use plots with information on all species (i.e. without NAs, using e.g. the command na.omit(dat)). We highlight this topic because it might cause issues when using the data to e.g. calculate richness of a given group. We recommend to always check how many plots were measured per DataID and per year.
 
 ```R
 #Example code to add zeros back for the bacteria and fungi datasets. Also adds NAs for the plots with missing data. Note: this will heavily  increase the datasets size and might cause memory issues!:
@@ -170,13 +172,24 @@ Note also that some plots might not have been surveyed in a given year but were 
 
 1. **Temporal data**. The synthesis dataset does not contain the temporal arthropods dataset. This is because more groups were sampled in the 2008 arthropod dataset, therefore we focussed on the most complete year of sampling. However, for questions related to temporal dynamics or for more extensive surveys of some arthropod groups (Coleoptera, Aranaea, Hemiptera and Orthoptera), we strongly recommend to use the temporal datasets from the Arthropod Core Team (ID21969 ["Sweep net samples from grasslands since 2008: Araneae, Coleoptera, Hemiptera, Orthoptera"](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=21969) and 26008 [“List of plots without complete sampling for sweepnetting of arthropods on grassland EPs 2008 to 2017”](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=26008))
 
-2. **Larger taxonomic coverage**. Some insect groups were sampled in more detail with focussed methods. They cannot be easily merged to the synthesis dataset because of different sampling methods. However we strongly recommend to consider them:
+2. **Larger taxonomic coverage**. Some insect groups were sampled in more detail with focussed methods. They cannot be easily merged to the synthesis dataset because of different sampling methods. However we strongly recommend to consider them.
 
+Grasslands:
    - 21207: [Dungwebs Species List 2014 & 2015 (Invertebrates, Scarabaeoidea, Dung Beetles)](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=21207)
    - 19826: [Orthoptera Density 2014 - all Grassland EPs - using biocenometer sampling](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=19826)
    - 20526: [Auchenorrhyncha Density 2015 - all Grassland EPs - using biocenometer sampling](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=20526)
-   - 26026: [Moth abundance from light trapping on all grassland and forest plots 2018](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=26026)
-
+   - 26026: [Moth abundance from light trapping on all grassland and forest plots 2018](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=26026) This dataset is however included in the forest dataset
+   
+Forests:   
+   - 20034: [Bark Beetle Antagonists sampled with PheromoneTraps in Forest EPs in 2010](https://www.bexis.uni-jena.de/ddm/data/Showdata/20034)
+   - 20031: [Bark Beetles sampled with Pheromone Traps in Forest EPs in 2010](https://www.bexis.uni-jena.de/ddm/data/Showdata/20031) This dataset is included in the forests dataset
+   - 20035: [Bark Beetles pest control based on samples with Pheromone Traps in Forest EPs in 2010](https://www.bexis.uni-jena.de/ddm/data/Showdata/20035)
+   - 24106: [Ambrosia beetles and antagonists sampled by Pheromone traps on all EPs in 2010 and on a subset in 2011](https://www.bexis.uni-jena.de/ddm/data/Showdata/24106)
+   - 22027: [Window traps in tree crowns on forest VIPs and EPs, 2008, Coleoptera, Hemiptera, Orthoptera](https://www.bexis.uni-jena.de/ddm/data/Showdata/22027)
+   - 22066: [The soil macrofauna orderlevel from all forest EPs sampled in spring 2011](https://www.bexis.uni-jena.de/ddm/data/Showdata/22066)
+   - 21906: [Pitfall traps on forest EPs in 2008 subset Formicidae Species Abundances](https://www.bexis.uni-jena.de/ddm/data/Showdata/21906) For this dataset, some issues in the data could not be solved, see details in [this script](https://github.com/biodiversity-exploratories-synthesis/Synthesis_dataset_diversity_forest/blob/main/210217_ForestDivDataUPDATE.R)
+   
+   
    Please note that this list might not be exhaustive.
 
 3. **Pollinators**. The trophic level “pollinators” comes from different datasets but the grouping can be used because it was checked and homogenised by specialists from the Arthropod Core Team. Not all taxonomic groups within pollinators were measured in the same plots, so we recommend to use only the plots where all groups were measured.
@@ -206,11 +219,17 @@ rarefied.dat <- rarefy_even_depth(phylodat) #sample size should be the smallest 
 
 **Duplicates**. In very few cases, the same species were identified by two different datasets (e.g. some species were common in the ants and in the pollinator datasets). We removed all duplicate species occurrences and kept only the information from the datasets having more plots. If the number of sampled plots in the two datasets was similar, we prioritised the most extensive sampling for these species (e.g. some myriapods were collected together with other arthropods but we prioritised the information coming from the myriapod-specific sampling).
 
+**Original datasets**. Original datasets might contain more information. For instance:
+- birds 2018 have information on birds detected at different scales
+- soil fungi have probabilities of species assignments ("unassigned", "Probable", "Highly Probable", "Possible") and could be filtered accordingly. In the datasets, we added all species.
+- ants have abundance information
+- earthworms have biomass information (Dataset 21686)
+Please always check the metadata of the original datasets. Some of this information can be useful for some research questions.
 
+**Taxonomic information** Taxonomic information is contained in the columns “Group_broad” and “Group_fine”. The degree of resolution in the classification can vary between different groups and was chosen to optimise multidiversity analyses. Please be aware that different types of analyses might require other taxonomic/trophic classifications. Complete taxonomic classification can usually be obtained from the owners of the single datasets.
 
-**Original datasets**. Original datasets might contain more information. For instance birds 2018 have information on birds detected at different scales; soil fungi have probabilities of species assignments, ants have abundance information). Please always check the metadata of the original datasets. Some of this information can be useful for some research questions.
-
-**Taxonomic information.** Taxonomic information is contained in the columns “Group_broad” and “Group_fine”. The degree of resolution in the classification can vary between different groups and was chosen to optimise multidiversity analyses. Please be aware that different types of analyses might require other taxonomic/trophic classifications. Complete taxonomic classification can usually be obtained from the owners of the single datasets.
+**Trophic and functional groups information**
+The column `Fun_group_fine` is quite heterogeneous and should be used in combination with the column `Fun_group_broad`.
 
 
 
@@ -226,12 +245,37 @@ rarefied.dat <- rarefy_even_depth(phylodat) #sample size should be the smallest 
 
 ## Specific notes for the forest datasets
 
+### Forest diversity datset
+The diversity data in the forest datasets is mostly about understorey groups.
+Important notes:
+- be aware that *deadwood fungi come from two different datasets* (Group_broad: "fungi.deadw"), these datasets were collected with different methods on different years and on a different total nummber of plots. Dataset 17186 is from 2011, has abundance information but only data on 120 plots. Dataset 18547 is from 2010, has presence-absencce information and data on 150 plots. We included both datasets to allow analyses in different years and because the number of species in the two datasets only partially overlap. However we recommend to 1) choose only one dataset for analyses, 2) not compare years and 3) if both years are used, subset the dataset to the common 120 plots.
+
+```R
+# Example code to check for this potential issue
+forest_dataset[Group_broad == "fungi.deadw"]
+unique(frs2[Group_broad == "fungi.deadw"]$DataID)
+length(unique(frs2[DataID==17186]$Plot)) #how many plots in dataset 17186?
+```
+- in the 2021/2022 update we removed all soil fungi datasets and replaced them by the datasets created with the latest sequencing techniques. However, datasets specifically collected on fine roots (and not on soils) could be of interest for specific projects:
+  - 22968: Fungal communities from fine roots collected from 150 forest plots in 2014 by Illumina sequencing  - normalized to 8400 reads per plot
+  - 30973: Abundant of root-associated fungi from the organic layer and mineral soil across 150 forest experimental plots (soil sampling campaign, 2017) - OTU taxonomic look-up table
+  - 30974: Abundant of root-associated fungi from organic layer and mineral soil across 150 forest experimental plots (soil sampling campaign, 2017)
+
+- The soil fungi datasets included in the synthesis dataset contain general abundant soil fungi (also including AMF). However, for specific analyses and more precidse data on AMF, these datasets should also be considered:
+    - 27688: Arbuscular mycorrhizal fungi on all 150 forest EPs (from Soil Sampling Campain 2011; Illumina MiSeq) - ASV abundances
+  - 27690: Arbuscular mycorrhizal fungi on all 150 forest EPs (from Soil Sampling Campain 2014; Illumina MiSeq) - ASV abundances
+  - 27692: Arbuscular mycorrhizal fungi on all 150 forest EPs (from Soil Sampling Campain 2017; Illumina MiSeq) - ASV abundances
+    - 27686: Arbuscular mycorrhizal fungi on all 300 EPs (from Soil Sampling Campains 2011, 2014 and 2017; Illumina MiSeq) - ASV taxonomic look-up table
+
+- Protists: Cercozoa are mainly bacterivores (omnivores and eukarivores could be removed from analyses). Oomicota are mainly plant parasites, hemibiotrophs (alternate parasites) and saprotrophs (less specialised): this informain is in the Fun_group_fine column.
+
+
 ### Clear-cuts in Hainich
 
 #### HEW51 and HEW02
-In 2016, the forest plot HEW02 was heavily damaged by a storm and had to be harvested (clear-cut) between the field seasons of 2016 and 2017. The plot was transformed to a grassland, therefore a new plot, **HEW51** was established. 
+In 2016, the forest plot HEW02 was heavily damaged by a storm and had to be harvested (clear-cut) between the field seasons of 2016 and 2017. The plot was transformed to a grassland, therefore a new plot, **HEW51** was established in 2017. 
 
-In the forest datasets, both plots are included, but HEW02 only contains data for the years until 2016 (including 2016), and NAs from 2017 on (including 2017). Accordingly, the earliest data for HEW51 is in 2017, all years before 2017 (2016 and earlier) are set to NA.
+In the forest datasets, both plots are included, but HEW02 only contains data for the years until 2016 (including 2016), and NAs from 2017 on (including 2017). Accordingly, the earliest data for HEW51 is in 2017, all years before 2017 (2016 and earlier) should be set to NA.
 
 If using data from only either before and including 2016 or after 2016, 50 HEW plots can be used. Otherwise, if data from before AND after 2016 are used together in an analysis, we suggest removing both HEW02 and HEW51.
 
