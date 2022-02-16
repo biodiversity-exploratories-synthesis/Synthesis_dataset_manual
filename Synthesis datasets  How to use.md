@@ -167,37 +167,6 @@ Several taxa have information for more than one year. The use of a single year o
 Note also that some plots might not have been surveyed in a given year but were surveyed other years (e.g. SEG33 in 2013 in the plant dataset ID27386). Keeping or removing those plots from the dataset will depend on the research question and analyses.
 
 
-
-## Important notes on arthropods
-
-1. **Temporal data**. The synthesis dataset does not contain the temporal arthropods dataset. This is because more groups were sampled in the 2008 arthropod dataset, therefore we focussed on the most complete year of sampling. However, for questions related to temporal dynamics or for more extensive surveys of some arthropod groups (Coleoptera, Aranaea, Hemiptera and Orthoptera), we strongly recommend to use the temporal datasets from the Arthropod Core Team (ID21969 ["Sweep net samples from grasslands since 2008: Araneae, Coleoptera, Hemiptera, Orthoptera"](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=21969) and 26008 [“List of plots without complete sampling for sweepnetting of arthropods on grassland EPs 2008 to 2017”](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=26008))
-
-2. **Larger taxonomic coverage**. Some insect groups were sampled in more detail with focussed methods. They cannot be easily merged to the synthesis dataset because of different sampling methods. However we strongly recommend to consider them.
-
-Grasslands:
-   - 21207: [Dungwebs Species List 2014 & 2015 (Invertebrates, Scarabaeoidea, Dung Beetles)](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=21207)
-   - 19826: [Orthoptera Density 2014 - all Grassland EPs - using biocenometer sampling](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=19826)
-   - 20526: [Auchenorrhyncha Density 2015 - all Grassland EPs - using biocenometer sampling](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=20526)
-   - 26026: [Moth abundance from light trapping on all grassland and forest plots 2018](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=26026) This dataset is however included in the forest dataset
-   
-Forests:   
-   - 20034: [Bark Beetle Antagonists sampled with PheromoneTraps in Forest EPs in 2010](https://www.bexis.uni-jena.de/ddm/data/Showdata/20034)
-   - 20031: [Bark Beetles sampled with Pheromone Traps in Forest EPs in 2010](https://www.bexis.uni-jena.de/ddm/data/Showdata/20031) This dataset is included in the forests dataset
-   - 20035: [Bark Beetles pest control based on samples with Pheromone Traps in Forest EPs in 2010](https://www.bexis.uni-jena.de/ddm/data/Showdata/20035)
-   - 24106: [Ambrosia beetles and antagonists sampled by Pheromone traps on all EPs in 2010 and on a subset in 2011](https://www.bexis.uni-jena.de/ddm/data/Showdata/24106)
-   - 22027: [Window traps in tree crowns on forest VIPs and EPs, 2008, Coleoptera, Hemiptera, Orthoptera](https://www.bexis.uni-jena.de/ddm/data/Showdata/22027)
-   - 22066: [The soil macrofauna orderlevel from all forest EPs sampled in spring 2011](https://www.bexis.uni-jena.de/ddm/data/Showdata/22066)
-   - 21906: [Pitfall traps on forest EPs in 2008 subset Formicidae Species Abundances](https://www.bexis.uni-jena.de/ddm/data/Showdata/21906) For this dataset, some issues in the data could not be solved, see details in [this script](https://github.com/biodiversity-exploratories-synthesis/Synthesis_dataset_diversity_forest/blob/main/210217_ForestDivDataUPDATE.R)
-   
-   
-   Please note that this list might not be exhaustive.
-
-3. **Pollinators**. The trophic level “pollinators” comes from different datasets but the grouping can be used because it was checked and homogenised by specialists from the Arthropod Core Team. Not all taxonomic groups within pollinators were measured in the same plots, so we recommend to use only the plots where all groups were measured.
-
-   The pollinators in the synthesis diversity dataset are derived from the same dataset included in the synthesis functions dataset. Therefore high correlations between these two are artificial and analyses using both measures would be circular (i.e. done with the same data).
-
-
-
 ## Specific notes for the diversity datasets
 
 **Richness and abundance.** The column “type” provides information about the type of data: abundance, presence absence, cover, number of OTUs (operational taxonomic units), number of ASVs (exact sequence variants).
@@ -294,6 +263,35 @@ There was a drought in 2018 and 2019. As a result, in **2019**, the Hainich fore
 
 
 TODO [Check back if we officially recommend to remove both plots in case of dataset spanning over 2017. Check what we recommend for the dry years and the deforested plots.]
+
+## Important notes on arthropods
+
+1. **Temporal data**. The synthesis dataset does not contain the temporal arthropods dataset. This is because more groups were sampled in the 2008 arthropod dataset, therefore we focussed on the most complete year of sampling. However, for questions related to temporal dynamics or for more extensive surveys of some arthropod groups (Coleoptera, Aranaea, Hemiptera and Orthoptera), we strongly recommend to use the temporal datasets from the Arthropod Core Team (ID21969 ["Sweep net samples from grasslands since 2008: Araneae, Coleoptera, Hemiptera, Orthoptera"](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=21969) and 26008 [“List of plots without complete sampling for sweepnetting of arthropods on grassland EPs 2008 to 2017”](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=26008))
+
+2. **Larger taxonomic coverage**. Some insect groups were sampled in more detail with focussed methods. They cannot be easily merged to the synthesis dataset because of different sampling methods. However we strongly recommend to consider them.
+
+Grasslands:
+   - 21207: [Dungwebs Species List 2014 & 2015 (Invertebrates, Scarabaeoidea, Dung Beetles)](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=21207)
+   - 19826: [Orthoptera Density 2014 - all Grassland EPs - using biocenometer sampling](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=19826)
+   - 20526: [Auchenorrhyncha Density 2015 - all Grassland EPs - using biocenometer sampling](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=20526)
+   - 26026: [Moth abundance from light trapping on all grassland and forest plots 2018](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=26026) This dataset is however included in the forest dataset
+   
+Forests:   
+   - 20034: [Bark Beetle Antagonists sampled with PheromoneTraps in Forest EPs in 2010](https://www.bexis.uni-jena.de/ddm/data/Showdata/20034)
+   - 20031: [Bark Beetles sampled with Pheromone Traps in Forest EPs in 2010](https://www.bexis.uni-jena.de/ddm/data/Showdata/20031) This dataset is included in the forests dataset
+   - 20035: [Bark Beetles pest control based on samples with Pheromone Traps in Forest EPs in 2010](https://www.bexis.uni-jena.de/ddm/data/Showdata/20035)
+   - 24106: [Ambrosia beetles and antagonists sampled by Pheromone traps on all EPs in 2010 and on a subset in 2011](https://www.bexis.uni-jena.de/ddm/data/Showdata/24106)
+   - 22027: [Window traps in tree crowns on forest VIPs and EPs, 2008, Coleoptera, Hemiptera, Orthoptera](https://www.bexis.uni-jena.de/ddm/data/Showdata/22027)
+   - 22066: [The soil macrofauna orderlevel from all forest EPs sampled in spring 2011](https://www.bexis.uni-jena.de/ddm/data/Showdata/22066)
+   - 21906: [Pitfall traps on forest EPs in 2008 subset Formicidae Species Abundances](https://www.bexis.uni-jena.de/ddm/data/Showdata/21906) For this dataset, some issues in the data could not be solved, see details in [this script](https://github.com/biodiversity-exploratories-synthesis/Synthesis_dataset_diversity_forest/blob/main/210217_ForestDivDataUPDATE.R)
+   
+   
+Please note that this list might not be exhaustive.
+
+3. **Pollinators**. In the grassland diversity dataset, the trophic level “pollinators” comes from different datasets but the grouping can be used because it was checked and homogenised by specialists from the Arthropod Core Team. Not all taxonomic groups within pollinators were measured in the same plots, so we recommend to use only the plots where all groups were measured.
+
+   The pollinators in the synthesis diversity dataset are derived from the same dataset included in the synthesis functions dataset. Therefore high correlations between these two are artificial and analyses using both measures would be circular (i.e. done with the same data).
+
 
 ## Varia
 
