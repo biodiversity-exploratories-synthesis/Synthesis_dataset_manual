@@ -14,7 +14,7 @@ For specific information on the treatment and operations made on the single data
 For any suggestion on this manual or on the synthesis datasets please contact us by email or open an issue on [GitHub](https://github.com/biodiversity-exploratories-synthesis/Synthesis-dataset-manual/issues). 
 
 
-</sup></sub>*Table of Contents* : the below `[toc]` generates a Table of Content. On GitHub, the table of contents can be found at the upper left corner of this file.</sup></sub>
+<sup><sub>*Table of Contents* : the below `[toc]` generates a Table of Content. On GitHub, the table of contents can be found at the upper left corner of this file.</sup></sub>
 
 [toc]
 
