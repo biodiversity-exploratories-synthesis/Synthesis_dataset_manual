@@ -15,7 +15,6 @@ For any suggestion on this manual or on the synthesis datasets please contact us
 
 
 <sup><sup><sub>*Table of Contents* : the below `[toc]` generates a Table of Content. On GitHub, the table of contents can be found at the upper left corner of this file.</sup></sub></sub>
-
 [toc]
 
 ## Organisation
