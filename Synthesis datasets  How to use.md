@@ -219,7 +219,7 @@ The column `Fun_group_fine` is quite heterogeneous and should be used in combina
 
 ## Specific notes for the forest datasets
 
-### Forest diversity datset
+### Diversity datset
 The diversity data in the forest datasets is mostly about understorey groups.
 Important notes:
 - Be aware that **deadwood fungi come from two different datasets** (Group_broad: "fungi.deadw"), these datasets were collected with different methods on different years and on a different total nummber of plots. Dataset 17186 is from 2011, has abundance information but only data on 120 plots. Dataset 18547 is from 2010, has presence-absencce information and data on 150 plots. We included both datasets to allow analyses in different years and because the number of species in the two datasets only partially overlap. However we recommend to 1) choose only one dataset for analyses, 2) not compare years and 3) if both years are used, subset the dataset to the common 120 plots.
