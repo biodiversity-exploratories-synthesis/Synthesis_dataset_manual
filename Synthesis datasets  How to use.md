@@ -141,8 +141,6 @@ In grasslands, the bacteria dataset is not complete, two plots miss information 
 
 In forests, the bacteria dataset is not complete, one plot misses information for all species (HEW04, see https://www.bexis.uni-jena.de/ddm/data/Showdata/24868). For this plot, the values for all species should be replaced by NAs and any information missing in the rest of the plots are true zeros (and should be replaced by zeros).
 
-*TODO : We will provide information on missing plots for forest after the release of the updated forest dataset.*
-
 
 
 ![img](https://github.com/biodiversity-exploratories-synthesis/Synthesis-dataset-manual/blob/main/images/Synthesis%20datasets%20%20How%20to%20use-Fig2?raw=true)
