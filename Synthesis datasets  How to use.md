@@ -137,7 +137,7 @@ The grouping information described above also applies to the functions datasets,
 
 To avoid increasing the size of the synthesis dataset, the two largest datasets (bacteria and soil fungi) do not include all combinations of plots x species when a given species was not found in a given plot i.e. they do not contain zeros (see Fig.2). These “missing” combinations are true zeros and should not be confused with NAs. The information in the soil fungi datasets is complete (i.e. all combinations of plots x species were measured, so if the value is not in the dataset it should be replaced by a zero). 
 
-In grasslands, the bacteria dataset is not complete, two plots miss information for all species (AEG33 and AEG34). For these two plots, the values for all species should be replaced by NAs and any information missing in the rest of the plots are true zeros (and should be replaced by zeros).
+In grasslands, the bacteria dataset is not complete, two plots miss information for all species in 2011 (AEG33 and AEG34). The 2014 dataset has data for 150 plots. For these two plots, the values for all species should be replaced by NAs and any information missing in the rest of the plots are true zeros (and should be replaced by zeros).
 
 In forests, the bacteria dataset is not complete, one plot misses information for all species (HEW04, see https://www.bexis.uni-jena.de/ddm/data/Showdata/24868). For this plot, the values for all species should be replaced by NAs and any information missing in the rest of the plots are true zeros (and should be replaced by zeros).
 
