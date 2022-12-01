@@ -63,7 +63,7 @@ Note that the forest functions dataset has not been updated to this format yet a
 ### Interactions dataset
 This dataset includes a list of all observed biotic interactions between pairs of species in the Biodiversity Exploratories (forests and grasslands).
 You will find the dataset here: [List of biotic interactions between pairs of species in Biodiversity Exploratories](https://www.bexis.uni-jena.de/ddm/data/Showdata/31209)
-*NOte: the dataset will be uploaded soon, we are currently making all the final checks*
+*Note: the dataset will be uploaded soon, we are currently making all the final checks*
 
 ## Datasets size and memory issues
 
