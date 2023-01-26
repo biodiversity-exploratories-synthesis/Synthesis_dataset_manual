@@ -8,7 +8,7 @@ We strongly recommend reading the metadata of the original datasets and contact 
 
 For specific information on the treatment and operations made on the single datasets included in the synthesis datasets, please refer to the scripts available in our [GitHub repository](https://github.com/biodiversity-exploratories-synthesis) (e.g. [Grassland diversity datasets](https://github.com/biodiversity-exploratories-synthesis/Synthesis_dataset_diversity_grassland)) or contact us.
 
-
+The overview of the synthesis datasets including information about the current and outdated versions is [here](https://github.com/biodiversity-exploratories-synthesis/Synthesis_dataset_manual/blob/main/Synthesis_datasets_overview.md). We **strongly** recommend to use the current versions as outdated versions might contain errors or old datasets (e.g. datasets that have been resequenced).
 
 
 For any suggestion on this manual or on the synthesis datasets please contact us by email or open an issue on [GitHub](https://github.com/biodiversity-exploratories-synthesis/Synthesis-dataset-manual/issues). 
@@ -25,19 +25,9 @@ The diversity synthesis datasets are organised in two separate files:
 
 1. Assembled RAW diversity (~350Mb): contain information on plots, species, value, type (either abundance, presence-absence, OTU_number, ASV_number or cover), year of measurement, Bexis DataID and data version.
 
-   Currently these files are:
-
-   - Grasslands :  [27707 “Assembled RAW diversity from grassland EPs (2008-2020) for multidiversity synthesis - November 2020”](https://www.bexis.uni-jena.de/ddm/data/Showdata/27707)
-   - Forests : [31206 “Assembled RAW diversity from forest EPs (2007-2020) for multidiversity synthesis -  January 2022”](https://www.bexis.uni-jena.de/ddm/data/Showdata/31206)
-
 2. Assembled species information (~20Mb): contain information on Trophic levels, functional and taxonomic grouping
 
-   These two files can be merged using the common column “Species”.
-
-   Currently these files are:
-
-   - Grasslands : [27706 “Assembled species information from grassland EPs (2008-2020) for multidiversity synthesis - November 2020”](https://www.bexis.uni-jena.de/ddm/data/Showdata/27706)
-   - Forests : [31207 “Assembled species information from forest EPs (2007-2020) for multidiversity synthesis - January 2022”](https://www.bexis.uni-jena.de/ddm/data/Showdata/31207)
+   These two files can be merged using the common column “Species”. An example is given in the following R script: [R scripts usable for dataset: Assembled RAW diversity from grassland EPs (2010-2016) for multidiversity synthesis](https://www.bexis.uni-jena.de/ddm/data/Showdata/22046)
 
 ### Function datasets
 
@@ -63,7 +53,7 @@ Note that the forest functions dataset has not been updated to this format yet a
 ### Interactions dataset
 This dataset includes a list of all observed biotic interactions between pairs of species in the Biodiversity Exploratories (forests and grasslands).
 You will find the dataset here: [List of biotic interactions between pairs of species in Biodiversity Exploratories](https://www.bexis.uni-jena.de/ddm/data/Showdata/31209)
-*Note: the dataset will be uploaded soon, we are currently making all the final checks*
+*Note: the dataset is currently under development*
 
 ## Datasets size and memory issues
 
@@ -274,8 +264,7 @@ TODO [Check back if we officially recommend to remove both plots in case of data
 2. **Larger taxonomic coverage**. Some insect groups were sampled in more detail with focussed methods. They cannot be easily merged to the synthesis dataset because of different sampling methods. However we strongly recommend to consider them.
 
 Grasslands:
-   - 21207: [Dungwebs Species List 2014 & 2015 (Invertebrates, Scarabaeoidea, Dung Beetles)](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=21207)
-   - 19826: [Orthoptera Density 2014 - all Grassland EPs - using biocenometer sampling](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=19826)
+      - 19826: [Orthoptera Density 2014 - all Grassland EPs - using biocenometer sampling](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=19826)
    - 20526: [Auchenorrhyncha Density 2015 - all Grassland EPs - using biocenometer sampling](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=20526)
    - 26026: [Moth abundance from light trapping on all grassland and forest plots 2018](https://www.bexis.uni-jena.de/Data/ShowXml.aspx?DatasetId=26026) This dataset is however included in the forest dataset
    
