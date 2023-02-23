@@ -17,7 +17,7 @@ The datasets belong to the following groups of indicators :
 
 | DatasetGroup | staus | Year | DatasetID | Title | short Description | last update | Metadata creator | 
 | --- | --- | --- | --- |--- | --- |--- | --- |
-| Diversity grassland | outdated | 2008-2020 | [31434](https://www.bexis.uni-jena.de/ddm/data/Showdata/31434) | Assembled RAW diversity from grassland EPs (2008-2020) for multidiversity synthesis - January 2023  | Species abundance | 2022 | Caterina Penone | 
+| Diversity grassland | active | 2008-2020 | [31434](https://www.bexis.uni-jena.de/ddm/data/Showdata/31434) | Assembled RAW diversity from grassland EPs (2008-2020) for multidiversity synthesis - January 2023  | Species abundance | 2022 | Caterina Penone | 
 | Diversity grassland | active | 2008-2020 | [31435](https://www.bexis.uni-jena.de/ddm/data/Showdata/31435) | Assembled species information from grassland EPs (2008-2020) for multidiversity synthesis - January 2023  | Species information | 2022 | Caterina Penone | 
 | Diversity grassland | outdated | 2008-2020 | [27707](https://www.bexis.uni-jena.de/ddm/data/Showdata/27707) | Assembled RAW diversity from grassland EPs (2008-2020) for multidiversity synthesis - November 2020  | Species abundance | 2020 | Caterina Penone | 
 | Diversity grassland | outdated | 2008-2020 | [27706](https://www.bexis.uni-jena.de/ddm/data/Showdata/27706) | Assembled species information from grassland EPs (2008-2020) for multidiversity synthesis - November 2020  | Species information | 2020 | Caterina Penone | 
