@@ -15,7 +15,7 @@ The datasets belong to the following groups of indicators :
 
 ## Diversity Grassland
 
-| DatasetGroup | staus | Year | DatasetID | Title | short Description | last update | Metadata creator | 
+| DatasetGroup | status | Year | DatasetID | Title | short Description | last update | Metadata creator | 
 | --- | --- | --- | --- |--- | --- |--- | --- |
 | Diversity grassland | active | 2008-2020 | [31434](https://www.bexis.uni-jena.de/ddm/data/Showdata/31434) | Assembled RAW diversity from grassland EPs (2008-2020) for multidiversity synthesis - January 2023  | Species abundance | 2022 | Caterina Penone | 
 | Diversity grassland | active | 2008-2020 | [31435](https://www.bexis.uni-jena.de/ddm/data/Showdata/31435) | Assembled species information from grassland EPs (2008-2020) for multidiversity synthesis - January 2023  | Species information | 2022 | Caterina Penone | 
@@ -29,7 +29,7 @@ The datasets belong to the following groups of indicators :
 
 ## Diversity Forest
 
-| DatasetGroup | staus | Year | DatasetID | Title | short Description | last update | Metadata creator | 
+| DatasetGroup | status | Year | DatasetID | Title | short Description | last update | Metadata creator | 
 | --- | --- | --- | --- |--- | --- |--- | --- |
 | Diversity forest | active | 2007-2020 | [31206](https://www.bexis.uni-jena.de/ddm/data/Showdata/31206) | Assembled RAW diversity from forest EPs (2007-2020) for multidiversity synthesis -  January 2022                                 | Species abundance | 2022 | Caterina Penone | 
 | Diversity forest | active | 2007-2020 | [31207](https://www.bexis.uni-jena.de/ddm/data/Showdata/31207) | Assembled species information from forest EPs (2007-2020) for multidiversity synthesis - January 2022 | Species information | 2022 | Caterina Penone | 
@@ -38,20 +38,20 @@ The datasets belong to the following groups of indicators :
 
 ## Ecosystem Functions Grassland
 
-| DatasetGroup | staus | Year | DatasetID | Title | short Description | last update | Metadata creator | 
+| DatasetGroup | status | Year | DatasetID | Title | short Description | last update | Metadata creator | 
 | --- | --- | --- | --- |--- | --- |--- | --- |
 | Functions grassland | active | 2008-2018 | [27087](https://www.bexis.uni-jena.de/ddm/data/Showdata/27087) | Assembled ecosystem measures from grassland EPs (2008-2018) for multifunctionality synthesis - June 2020                                 | Ecosystem functions | 2022 | Noëlle Schenk | 
 
 ## Ecosystem Functions Forest
 
-| DatasetGroup | staus | Year | DatasetID | Title | short Description | last update | Metadata creator | 
+| DatasetGroup | status | Year | DatasetID | Title | short Description | last update | Metadata creator | 
 | --- | --- | --- | --- |--- | --- |--- | --- |
 | Functions forest | active | 2009-2015 | [24367](https://www.bexis.uni-jena.de/ddm/data/Showdata/24367) | Raw data of forest attributes of forest EPs of the Exploratories project used in "Multiple forest attributes underpin the supply of multiple ecosystem services"                                 | Ecosystem functions | 2018 | Maria Felipe-Lucia | 
 
 
 ## Traits
 
-| DatasetGroup | staus | Year | DatasetID | Title | short Description | last update | Metadata creator | 
+| DatasetGroup | status | Year | DatasetID | Title | short Description | last update | Metadata creator | 
 | --- | --- | --- | --- |--- | --- |--- | --- |
 | Plant traits | active, incomplete | ? | [27606](https://www.bexis.uni-jena.de/ddm/data/Showdata/27606) | Community-weighted mean for plant above-ground traits - 300 forest and grassland EPs - 2008-2018                                 | plant traits grassland and forest : Community-weighted SLA means | 2021 | Margot Neyret | 
 | Plant traits | active, incomplete |  | [27586](https://www.bexis.uni-jena.de/ddm/data/Showdata/27586) | Raw plant trait data from TRY | Raw TRY data | 2021 | Margot Neyret | 
@@ -64,7 +64,7 @@ The datasets belong to the following groups of indicators :
 
 ## Landscape land-use and Environmental Covariates
 
-| DatasetGroup | staus | Year | DatasetID | Title | short Description | last update | Metadata creator | 
+| DatasetGroup | status | Year | DatasetID | Title | short Description | last update | Metadata creator | 
 | --- | --- | --- | --- |--- | --- |--- | --- |
 | Landscape land-use and covariates | active | 2006-2017 | [31018](https://www.bexis.uni-jena.de/ddm/data/Showdata/31018) | Aggregated environmental and land-use covariates of the 150 grassland EPs used in "Contrasting responses of above- and belowground diversity to multiple components of land-use intensity"                                 | environmental and land-use covariates grassland  | 2021 | Gaëtane Le Provost | 
 
