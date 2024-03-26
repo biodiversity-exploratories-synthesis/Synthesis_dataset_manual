@@ -40,7 +40,7 @@ The datasets belong to the following groups of indicators :
 
 | DatasetGroup | status | Year | DatasetID | Title | short Description | last update | Metadata creator | 
 | --- | --- | --- | --- |--- | --- |--- | --- |
-| Functions grassland | active | 2008-2018 | [27087](https://www.bexis.uni-jena.de/ddm/data/Showdata/27087) | Assembled ecosystem measures from grassland EPs (2008-2018) for multifunctionality synthesis - June 2020                                 | Ecosystem functions | 2022 | Noëlle Schenk | 
+| Functions grassland | active | 2008-2018 | [27087](https://www.bexis.uni-jena.de/ddm/data/Showdata/27087) | Assembled ecosystem measures from grassland EPs (2008-2018) for multifunctionality synthesis - June 2020                                 | Ecosystem functions ([detailed metadata here](https://github.com/biodiversity-exploratories-synthesis/Synthesis_dataset_functions_grassland/blob/master/31621_attachments/synthesis_grassland_function_metadata_ID27087.xlsx)) | 2022 | Noëlle Schenk | 
 | Functions grassland | outdated | 2008-2011 | [21688](https://www.bexis.uni-jena.de/ddm/data/Showdata/21688) | Assembled ecosystem measures from grassland EPs (2008-2011) for multifunctionality synthesis                                 | Ecosystem functions | 2017 | Eric Allan | 
 
 ## Ecosystem Functions Forest
